@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Target, Eye, Heart, Users, Award, TrendingUp, ChevronRight } from 'lucide-react'
+import { Target, Eye, Heart, Users, Award, TrendingUp, ChevronRight, Shield } from 'lucide-react'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const values = [
@@ -43,8 +43,6 @@ const team = [
   { name: 'David Kim', role: 'Fleet Manager', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400' },
   { name: 'Amanda Foster', role: 'Customer Relations', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400' },
 ]
-
-import { Shield } from 'lucide-react'
 
 export default function AboutPage() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, ReactNode } from 'react'
+import { useEffect, useRef, ReactNode, useCallback } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 
 interface ScrollRevealProps {
@@ -24,7 +24,7 @@ export default function ScrollReveal({
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const controls = useAnimation()
 
-  const getInitialPosition = () => {
+  const getInitialPosition = useCallback(() => {
     switch (direction) {
       case 'up':
         return { opacity: 0, y: 75 }
@@ -39,9 +39,9 @@ export default function ScrollReveal({
       default:
         return { opacity: 0, y: 75 }
     }
-  }
+  }, [direction])
 
-  const getFinalPosition = () => {
+  const getFinalPosition = useCallback(() => {
     switch (direction) {
       case 'up':
       case 'down':
@@ -54,13 +54,13 @@ export default function ScrollReveal({
       default:
         return { opacity: 1, y: 0 }
     }
-  }
+  }, [direction])
 
   useEffect(() => {
     if (isInView) {
       controls.start(getFinalPosition())
     }
-  }, [isInView, controls])
+  }, [isInView, controls, getFinalPosition])
 
   return (
     <div ref={ref} style={{ width }} className={className}>

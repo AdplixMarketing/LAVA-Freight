@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-900 text-white antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gold-500 text-navy-900 font-bold rounded-lg
+           hover:bg-gold-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-gold-500/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gold-500 text-gold-500 font-bold rounded-lg
+           hover:bg-gold-500 hover:text-navy-900 transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-teal-500 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-navy-700/50 backdrop-blur-sm border border-navy-600 rounded-2xl p-8
+           hover:border-gold-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-gold-500/10;
+  }
+
+  .nav-link {
+    @apply relative text-gray-300 hover:text-gold-500 transition-colors duration-300
+           after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
+           after:bg-gold-500 after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1829;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A4369;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8A824;
+}
+
+/* Parallax effect base */
+.parallax-container {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(-45deg, #0F1829, #1A2744, #2A8B8B, #1A2744);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

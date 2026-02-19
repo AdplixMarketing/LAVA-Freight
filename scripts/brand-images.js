@@ -173,84 +173,8 @@ function download(url) {
   });
 }
 
-async function createLogoBuffer(logoWidth, opacity) {
-  // Resize logo and set opacity
-  const resized = sharp(LOGO_PATH).resize(logoWidth);
-  const meta = await resized.metadata();
-
-  const logoBuffer = await resized
-    .ensureAlpha()
-    .composite([{
-      input: Buffer.from([255, 255, 255, Math.round(255 * opacity)]),
-      raw: { width: 1, height: 1, channels: 4 },
-      tile: true,
-      blend: 'dest-in',
-    }])
-    .png()
-    .toBuffer();
-
-  return logoBuffer;
-}
-
-async function processImage(imageBuffer, outputPath, config) {
-  const meta = await sharp(imageBuffer).metadata();
-  const composites = [];
-
-  // Step 1: Cover competitor branding if needed
-  if (config.coverBranding) {
-    for (const cover of config.coverBranding) {
-      const rectW = Math.round(meta.width * cover.w);
-      const rectH = Math.round(meta.height * cover.h);
-      const rectX = Math.round(meta.width * cover.x);
-      const rectY = Math.round(meta.height * cover.y);
-
-      const rect = await sharp({
-        create: {
-          width: rectW,
-          height: rectH,
-          channels: 4,
-          background: { r: cover.r, g: cover.g, b: cover.b, alpha: 255 },
-        },
-      }).png().toBuffer();
-
-      composites.push({
-        input: rect,
-        left: rectX,
-        top: rectY,
-      });
-    }
-  }
-
-  // Step 2: Place logo
-  if (config.logo === 'corner') {
-    // Corner watermark - bottom right, semi-transparent
-    const logoWidth = Math.round(meta.width * 0.14);
-    const logoBuffer = await createLogoBuffer(logoWidth, 0.75);
-    const logoMeta = await sharp(logoBuffer).metadata();
-    const padding = Math.round(meta.width * 0.02);
-
-    composites.push({
-      input: logoBuffer,
-      left: meta.width - logoMeta.width - padding,
-      top: meta.height - logoMeta.height - padding,
-    });
-  } else {
-    // On-truck placement - positioned on the truck body
-    const logoWidth = Math.round(meta.width * config.logo.w);
-    const logoBuffer = await createLogoBuffer(logoWidth, config.logo.opacity);
-    const logoX = Math.round(meta.width * config.logo.x);
-    const logoY = Math.round(meta.height * config.logo.y);
-
-    composites.push({
-      input: logoBuffer,
-      left: logoX,
-      top: logoY,
-    });
-  }
-
-  // Step 3: Composite everything and save
+async function processImage(imageBuffer, outputPath) {
   await sharp(imageBuffer)
-    .composite(composites)
     .jpeg({ quality: 85 })
     .toFile(outputPath);
 }
@@ -270,8 +194,8 @@ async function main() {
     try {
       process.stdout.write(`[${i + 1}/${images.length}] ${img.name} (${placementType})... downloading... `);
       const buffer = await download(img.url);
-      process.stdout.write(`branding... `);
-      await processImage(buffer, outputPath, img);
+      process.stdout.write(`saving... `);
+      await processImage(buffer, outputPath);
       console.log(`done (${Math.round(fs.statSync(outputPath).size / 1024)}KB)`);
     } catch (err) {
       console.log(`FAILED: ${err.message}`);

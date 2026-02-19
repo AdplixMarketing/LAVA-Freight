@@ -421,8 +421,8 @@ export default function Home() {
                   Get Your Free Quote
                   <ChevronRight className="ml-2" size={24} />
                 </Link>
-                <a href="tel:+1234567890" className="btn-secondary text-lg px-10 py-5">
-                  Call (123) 456-7890
+                <a href="tel:+13129098180" className="btn-secondary text-lg px-10 py-5">
+                  Call (312) 909-8180
                 </a>
               </div>
             </div>

@@ -794,11 +794,11 @@ export default function CareersPage() {
                 LAVA Freight. Give us a call or send an email.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+1234567890" className="btn-primary text-lg px-10 py-5">
+                <a href="tel:+13129098180" className="btn-primary text-lg px-10 py-5">
                   <Clock className="mr-2" size={24} />
                   Call Recruiting
                 </a>
-                <a href="mailto:recruiting@lavafreight.com" className="btn-secondary text-lg px-10 py-5">
+                <a href="mailto:dan@lavafreight.net" className="btn-secondary text-lg px-10 py-5">
                   Email Us
                 </a>
               </div>

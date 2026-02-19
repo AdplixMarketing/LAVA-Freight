@@ -68,11 +68,11 @@ export default function Navbar() {
             {/* CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
               <a
-                href="tel:+1234567890"
+                href="tel:+13129098180"
                 className="hidden md:flex items-center gap-2 text-gold-500 hover:text-gold-400 transition-colors"
               >
                 <Phone size={20} />
-                <span className="font-semibold">(123) 456-7890</span>
+                <span className="font-semibold">(312) 909-8180</span>
               </a>
               <Link href="/contact" className="hidden md:block btn-primary text-sm py-3 px-6">
                 Get a Quote
@@ -126,11 +126,11 @@ export default function Navbar() {
                   className="mt-6 flex flex-col items-center gap-4"
                 >
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+13129098180"
                     className="flex items-center gap-2 text-gold-500 text-lg"
                   >
                     <Phone size={24} />
-                    <span className="font-semibold">(123) 456-7890</span>
+                    <span className="font-semibold">(312) 909-8180</span>
                   </a>
                   <Link
                     href="/contact"

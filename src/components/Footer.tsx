@@ -117,20 +117,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+13129098180"
                   className="flex items-start gap-3 text-gray-400 hover:text-gold-500 transition-colors group"
                 >
                   <Phone size={20} className="text-gold-500 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span>(123) 456-7890</span>
+                  <span>(312) 909-8180</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@lavafreight.com"
+                  href="mailto:dan@lavafreight.net"
                   className="flex items-start gap-3 text-gray-400 hover:text-gold-500 transition-colors group"
                 >
                   <Mail size={20} className="text-gold-500 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span>info@lavafreight.com</span>
+                  <span>dan@lavafreight.net</span>
                 </a>
               </li>
               <li>
@@ -152,10 +152,10 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} LAVA Freight. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-gray-500 hover:text-gold-500 transition-colors">
+              <Link href="/privacy" className="text-gray-500 hover:text-gold-500 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-500 hover:text-gold-500 transition-colors">
+              <Link href="/terms" className="text-gray-500 hover:text-gold-500 transition-colors">
                 Terms of Service
               </Link>
             </div>

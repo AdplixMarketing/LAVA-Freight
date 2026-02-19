@@ -10,14 +10,14 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    details: ['(123) 456-7890', '(123) 456-7891'],
-    action: 'tel:+1234567890',
+    details: ['(312) 909-8180'],
+    action: 'tel:+13129098180',
   },
   {
     icon: Mail,
     title: 'Email',
-    details: ['info@lavafreight.com', 'quotes@lavafreight.com'],
-    action: 'mailto:info@lavafreight.com',
+    details: ['dan@lavafreight.net'],
+    action: 'mailto:dan@lavafreight.net',
   },
   {
     icon: MapPin,
@@ -304,11 +304,11 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-navy-900 mb-2">Need Urgent Shipping?</h3>
                   <p className="text-navy-800 mb-4">Our dispatch team is available 24/7 for time-critical shipments.</p>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+13129098180"
                     className="inline-flex items-center gap-2 text-navy-900 font-bold text-lg hover:underline"
                   >
                     <Phone size={24} />
-                    (123) 456-7890
+                    (312) 909-8180
                   </a>
                 </div>
               </div>

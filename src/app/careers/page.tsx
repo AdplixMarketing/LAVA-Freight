@@ -509,7 +509,7 @@ export default function CareersPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+            src="/trucks/careers-hero.jpg"
             alt="Truck driver on the road"
             fill
             className="object-cover opacity-20"
@@ -583,7 +583,7 @@ export default function CareersPage() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+                  src="/trucks/careers-requirements.jpg"
                   alt="Truck on highway"
                   width={600}
                   height={500}

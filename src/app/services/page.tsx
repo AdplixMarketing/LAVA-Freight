@@ -17,7 +17,7 @@ const services = [
       'Reduced handling and damage risk',
       'Ideal for large or sensitive cargo',
     ],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070',
+    image: '/trucks/services-ftl.jpg',
   },
   {
     icon: Package,
@@ -29,7 +29,7 @@ const services = [
       'Nationwide network coverage',
       'Freight class optimization',
     ],
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070',
+    image: '/trucks/services-ltl.jpg',
   },
   {
     icon: Clock,
@@ -41,7 +41,7 @@ const services = [
       'Real-time tracking',
       'Team drivers for non-stop delivery',
     ],
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070',
+    image: '/trucks/services-expedited.jpg',
   },
   {
     icon: MapPin,
@@ -53,7 +53,7 @@ const services = [
       'Custom route optimization',
       'Volume-based pricing',
     ],
-    image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070',
+    image: '/trucks/services-dedicated.jpg',
   },
   {
     icon: Warehouse,
@@ -65,7 +65,7 @@ const services = [
       'Inventory management',
       'Order fulfillment',
     ],
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070',
+    image: '/trucks/services-warehousing.jpg',
   },
   {
     icon: Shield,
@@ -77,7 +77,7 @@ const services = [
       'High-value cargo security',
       'Hazmat certified drivers',
     ],
-    image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2070',
+    image: '/trucks/services-specialized.jpg',
   },
 ]
 
@@ -95,7 +95,7 @@ export default function ServicesPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+            src="/trucks/services-hero.jpg"
             alt="Truck fleet"
             fill
             className="object-cover opacity-30"

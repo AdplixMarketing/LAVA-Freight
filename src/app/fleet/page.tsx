@@ -18,28 +18,28 @@ const truckTypes = [
     name: 'Dry Van Trailers',
     description: 'Our most versatile option, perfect for general freight and palletized goods.',
     specs: ['53\' standard length', 'Up to 45,000 lbs capacity', 'Air-ride suspension', 'Dock high'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070',
+    image: '/trucks/fleet-semi.jpg',
     count: '80+',
   },
   {
     name: 'Refrigerated Trailers',
     description: 'Temperature-controlled units for perishable goods and sensitive cargo.',
     specs: ['Multi-temp capability', '-20°F to 70°F range', 'Real-time monitoring', 'Food-grade certified'],
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070',
+    image: '/trucks/fleet-reefer.jpg',
     count: '40+',
   },
   {
     name: 'Flatbed Trailers',
     description: 'Ideal for oversized loads, machinery, and construction materials.',
     specs: ['48\' and 53\' options', 'Up to 48,000 lbs', 'Tarping available', 'Permit-ready'],
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070',
+    image: '/trucks/fleet-flatbed.jpg',
     count: '30+',
   },
   {
     name: 'Step Deck Trailers',
     description: 'Lower deck height for taller freight that won\'t fit in standard trailers.',
     specs: ['Additional height clearance', 'Front & rear loading', 'Heavy haul capable', 'Versatile configuration'],
-    image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070',
+    image: '/trucks/fleet-box.jpg',
     count: '20+',
   },
 ]
@@ -85,7 +85,7 @@ export default function FleetPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+            src="/trucks/fleet-hero.jpg"
             alt="Fleet of trucks"
             fill
             className="object-cover opacity-30"
@@ -233,7 +233,7 @@ export default function FleetPage() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2070"
+                  src="/trucks/fleet-safety.jpg"
                   alt="Truck safety features"
                   width={600}
                   height={450}
@@ -261,7 +261,7 @@ export default function FleetPage() {
             <ScrollReveal direction="left">
               <div className="relative lg:order-2">
                 <Image
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2070"
+                  src="/trucks/fleet-maintenance.jpg"
                   alt="Professional truck driver"
                   width={600}
                   height={450}

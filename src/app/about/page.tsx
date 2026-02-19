@@ -51,7 +51,7 @@ export default function AboutPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070"
+            src="/trucks/about-hero.jpg"
             alt="Highway at sunset"
             fill
             className="object-cover opacity-30"
@@ -88,7 +88,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+                  src="/trucks/about-history.jpg"
                   alt="LAVA Freight trucks"
                   width={600}
                   height={450}

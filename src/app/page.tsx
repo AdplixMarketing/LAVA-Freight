@@ -65,7 +65,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+            src="/trucks/home-hero.jpg"
             alt="Truck on highway"
             fill
             className="object-cover"
@@ -257,7 +257,7 @@ export default function Home() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+                  src="/trucks/home-why-choose.jpg"
                   alt="Fleet of trucks"
                   width={600}
                   height={500}
@@ -387,7 +387,7 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+                  src="/trucks/home-drive-with-us.jpg"
                   alt="Truck driver"
                   width={600}
                   height={500}

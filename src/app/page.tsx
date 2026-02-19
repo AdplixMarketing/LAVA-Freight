@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Truck, Shield, Clock, MapPin, ChevronRight, Star, Package, Users, Award } from 'lucide-react'
+import { Truck, Shield, Clock, MapPin, ChevronRight, Star, Package, Users, Award, UserPlus } from 'lucide-react'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const stats = [
@@ -341,6 +341,64 @@ export default function Home() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Drive With Us / Recruiting CTA */}
+      <section className="section-padding bg-navy-800/50">
+        <div className="container-custom mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal direction="left">
+              <div>
+                <span className="text-gold-500 font-semibold uppercase tracking-wider">Now Hiring</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                  Become a <span className="gradient-text">LAVA Driver</span>
+                </h2>
+                <p className="text-gray-400 text-lg mb-6">
+                  Looking for a career where you&apos;re valued? LAVA Freight is hiring experienced
+                  CDL drivers. We offer competitive pay, full benefits, modern equipment, and a
+                  team that treats you like family.
+                </p>
+                <div className="space-y-3 mb-10">
+                  {[
+                    'Competitive pay with weekly direct deposit',
+                    'Full medical, dental & vision benefits',
+                    'Late-model, well-maintained trucks',
+                    'Consistent miles and home time',
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-navy-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/careers" className="btn-primary text-lg px-10 py-5">
+                  <UserPlus className="mr-2" size={24} />
+                  Apply Now
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070"
+                  alt="Truck driver"
+                  width={600}
+                  height={500}
+                  className="rounded-2xl shadow-2xl"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-gold-500 text-navy-900 p-6 rounded-xl shadow-xl">
+                  <div className="text-4xl font-bold">50+</div>
+                  <div className="font-semibold">Open Positions</div>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

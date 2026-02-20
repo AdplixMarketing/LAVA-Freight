@@ -100,22 +100,25 @@ export default function ContactPage() {
       {/* Contact Info Cards */}
       <section className="relative py-16 bg-navy-800 border-y border-navy-700 -mt-10">
         <div className="container-custom mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {contactInfo.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 0.1}>
-                <a
-                  href={item.action}
-                  className="card h-full text-center hover:border-gold-500 transition-all duration-300 group"
-                >
-                  <div className="w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gold-500 transition-colors duration-300">
-                    <item.icon className="w-7 h-7 text-gold-500 group-hover:text-navy-900 transition-colors duration-300" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  {item.details.map((detail) => (
-                    <p key={detail} className="text-gray-400">{detail}</p>
-                  ))}
-                </a>
-              </ScrollReveal>
+              <motion.a
+                key={item.title}
+                href={item.action}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center text-center bg-navy-700/50 backdrop-blur-sm border border-navy-600 rounded-2xl p-5 md:p-8 hover:border-gold-500 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-gold-500 transition-colors duration-300 shrink-0">
+                  <item.icon className="w-6 h-6 md:w-7 md:h-7 text-gold-500 group-hover:text-navy-900 transition-colors duration-300" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold text-white mb-1 md:mb-2">{item.title}</h3>
+                {item.details.map((detail) => (
+                  <p key={detail} className="text-gray-400 text-sm md:text-base break-words w-full">{detail}</p>
+                ))}
+              </motion.a>
             ))}
           </div>
         </div>

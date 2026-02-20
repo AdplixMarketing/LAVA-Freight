@@ -257,10 +257,10 @@ export default function Home() {
             <ScrollReveal direction="left">
               <div className="relative pb-10 sm:pb-0">
                 <Image
-                  src="/trucks/home-why-choose.jpg"
+                  src="/trucks/home-why-choose.png"
                   alt="Fleet of trucks"
                   width={600}
-                  height={500}
+                  height={400}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
@@ -387,10 +387,10 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="relative pb-10 sm:pb-0">
                 <Image
-                  src="/trucks/home-drive-with-us.jpg"
+                  src="/trucks/home-drive-with-us.png"
                   alt="Truck driver"
                   width={600}
-                  height={500}
+                  height={400}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">

@@ -88,10 +88,10 @@ export default function AboutPage() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <Image
-                  src="/trucks/about-history.jpg"
+                  src="/trucks/about-history.png"
                   alt="LAVA Freight trucks"
                   width={600}
-                  height={450}
+                  height={400}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-gold-500/20 rounded-2xl -z-10" />

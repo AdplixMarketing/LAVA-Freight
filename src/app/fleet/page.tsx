@@ -85,7 +85,7 @@ export default function FleetPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/trucks/fleet-hero.jpg"
+            src="/trucks/fleet-hero.png"
             alt="Fleet of trucks"
             fill
             className="object-cover opacity-30"

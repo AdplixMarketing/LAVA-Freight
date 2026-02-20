@@ -255,17 +255,17 @@ export default function Home() {
         <div className="container-custom mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
-              <div className="relative">
+              <div className="relative pb-10 sm:pb-0">
                 <Image
                   src="/trucks/home-why-choose.jpg"
                   alt="Fleet of trucks"
                   width={600}
                   height={500}
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-gold-500 text-navy-900 p-6 rounded-xl shadow-xl">
-                  <div className="text-4xl font-bold">15+</div>
-                  <div className="font-semibold">Years of Excellence</div>
+                <div className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
+                  <div className="text-3xl sm:text-4xl font-bold">15+</div>
+                  <div className="font-semibold text-sm sm:text-base">Years of Excellence</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -385,17 +385,17 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative">
+              <div className="relative pb-10 sm:pb-0">
                 <Image
                   src="/trucks/home-drive-with-us.jpg"
                   alt="Truck driver"
                   width={600}
                   height={500}
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-gold-500 text-navy-900 p-6 rounded-xl shadow-xl">
-                  <div className="text-4xl font-bold">50+</div>
-                  <div className="font-semibold">Open Positions</div>
+                <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
+                  <div className="text-3xl sm:text-4xl font-bold">50+</div>
+                  <div className="font-semibold text-sm sm:text-base">Open Positions</div>
                 </div>
               </div>
             </ScrollReveal>

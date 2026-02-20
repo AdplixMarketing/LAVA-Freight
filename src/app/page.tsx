@@ -261,6 +261,7 @@ export default function Home() {
                   alt="Fleet of trucks"
                   width={600}
                   height={400}
+                  style={{ objectPosition: 'center' }}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
@@ -391,6 +392,7 @@ export default function Home() {
                   alt="Truck driver"
                   width={600}
                   height={400}
+                  style={{ objectPosition: 'center' }}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">

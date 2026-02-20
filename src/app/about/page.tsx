@@ -92,10 +92,10 @@ export default function AboutPage() {
                   alt="LAVA Freight trucks"
                   width={600}
                   height={450}
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-gold-500/20 rounded-2xl -z-10" />
-                <div className="absolute -top-8 -right-8 w-32 h-32 bg-teal-500/20 rounded-2xl -z-10" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/20 rounded-2xl -z-10" />
               </div>
             </ScrollReveal>
 

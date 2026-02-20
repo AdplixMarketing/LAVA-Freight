@@ -65,7 +65,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/trucks/home-hero.jpg"
+            src="/trucks/home-hero.png"
             alt="Truck on highway"
             fill
             className="object-cover"

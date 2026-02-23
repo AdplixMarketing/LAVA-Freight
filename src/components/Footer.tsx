@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { Phone, Mail, MapPin, Linkedin } from 'lucide-react'
 
 const quickLinks = [
   { href: '/', label: 'Home' },
@@ -18,7 +18,7 @@ const services = [
   'Less Than Truckload (LTL)',
   'Expedited Shipping',
   'Dedicated Routes',
-  'Warehousing',
+  'Specialized Freight',
 ]
 
 export default function Footer() {
@@ -43,37 +43,18 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 leading-relaxed">
-              Your trusted partner in freight transportation. Delivering excellence
+              The most reliable solution for freight transportation. Delivering excellence
               across the nation with reliability, safety, and unmatched service.
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
+                href="https://www.linkedin.com/company/lavafreight/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
               </a>
             </div>
           </div>
@@ -136,7 +117,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-3 text-gray-400">
                   <MapPin size={20} className="text-gold-500 mt-0.5 flex-shrink-0" />
-                  <span>123 Freight Avenue<br />Houston, TX 77001</span>
+                  <span>55W 22nd Street, Suite #130<br />Lombard, IL 60148</span>
                 </div>
               </li>
             </ul>

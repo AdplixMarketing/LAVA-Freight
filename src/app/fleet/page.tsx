@@ -7,48 +7,27 @@ import { Truck, Gauge, Shield, Thermometer, MapPin, Wifi, ChevronRight, Check } 
 import ScrollReveal from '@/components/ScrollReveal'
 
 const fleetStats = [
-  { value: '100+', label: 'Trucks', icon: Truck },
-  { value: '200+', label: 'Trailers', icon: Truck },
-  { value: '150+', label: 'Drivers', icon: Truck },
-  { value: '99.5%', label: 'GPS Coverage', icon: MapPin },
+  { value: '10+', label: 'Trucks', icon: Truck },
+  { value: '10+', label: 'Trailers', icon: Truck },
+  { value: '99%', label: 'On-Time Delivery', icon: MapPin },
+  { value: '24/7', label: 'Dispatch Support', icon: MapPin },
 ]
 
 const truckTypes = [
   {
     name: 'Dry Van Trailers',
-    description: 'Our most versatile option, perfect for general freight and palletized goods.',
+    description: 'Our primary trailer — versatile and reliable for general freight, high-value cargo, and palletized goods.',
     specs: ['53\' standard length', 'Up to 45,000 lbs capacity', 'Air-ride suspension', 'Dock high'],
     image: '/trucks/fleet-semi.jpg',
-    count: '80+',
-  },
-  {
-    name: 'Refrigerated Trailers',
-    description: 'Temperature-controlled units for perishable goods and sensitive cargo.',
-    specs: ['Multi-temp capability', '-20°F to 70°F range', 'Real-time monitoring', 'Food-grade certified'],
-    image: '/trucks/fleet-reefer.jpg',
-    count: '40+',
-  },
-  {
-    name: 'Flatbed Trailers',
-    description: 'Ideal for oversized loads, machinery, and construction materials.',
-    specs: ['48\' and 53\' options', 'Up to 48,000 lbs', 'Tarping available', 'Permit-ready'],
-    image: '/trucks/fleet-flatbed.jpg',
-    count: '30+',
-  },
-  {
-    name: 'Step Deck Trailers',
-    description: 'Lower deck height for taller freight that won\'t fit in standard trailers.',
-    specs: ['Additional height clearance', 'Front & rear loading', 'Heavy haul capable', 'Versatile configuration'],
-    image: '/trucks/fleet-box.jpg',
-    count: '20+',
+    count: '11',
   },
 ]
 
 const features = [
   {
     icon: Gauge,
-    title: 'Modern Fleet',
-    description: 'Average fleet age under 3 years, ensuring reliability and fuel efficiency.',
+    title: 'New Equipment',
+    description: 'New trucks and trailers ensuring reliability, fuel efficiency, and driver comfort.',
   },
   {
     icon: Wifi,
@@ -170,7 +149,7 @@ export default function FleetPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
             {truckTypes.map((truck, index) => (
               <ScrollReveal key={truck.name} delay={index * 0.1}>
                 <div className="card overflow-hidden group">
@@ -277,8 +256,8 @@ export default function FleetPage() {
                   Professional <span className="gradient-text">Team</span>
                 </h2>
                 <p className="text-gray-300 text-lg mb-6">
-                  Behind every great truck is a skilled, professional driver. Our team of 150+ drivers
-                  are the heart of LAVA Freight, bringing years of experience and dedication to every haul.
+                  Behind every great truck is a skilled, professional driver. Our team of experienced CDL
+                  professionals are the heart of LAVA Freight, bringing dedication and expertise to every haul.
                 </p>
                 <ul className="space-y-4">
                   {[

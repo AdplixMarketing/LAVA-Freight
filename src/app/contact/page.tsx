@@ -22,13 +22,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    details: ['123 Freight Avenue', 'Houston, TX 77001'],
+    details: ['55W 22nd Street, Suite #130', 'Lombard, IL 60148'],
     action: '#',
   },
   {
     icon: Clock,
     title: 'Hours',
-    details: ['24/7 Dispatch', 'Office: Mon-Fri 8am-6pm'],
+    details: ['24/7 Dispatch', 'Office: Mon-Fri, 7am-5pm'],
     action: '#',
   },
 ]
@@ -276,8 +276,8 @@ export default function ContactPage() {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
                         <MapPin className="w-12 h-12 text-gold-500 mx-auto mb-2" />
-                        <p className="text-white font-semibold">123 Freight Avenue</p>
-                        <p className="text-gray-400">Houston, TX 77001</p>
+                        <p className="text-white font-semibold">55W 22nd Street, Suite #130</p>
+                        <p className="text-gray-400">Lombard, IL 60148</p>
                       </div>
                     </div>
                   </div>

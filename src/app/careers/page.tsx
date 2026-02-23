@@ -6,11 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   Truck,
   DollarSign,
-  Heart,
   MapPin,
   Send,
   CheckCircle,
-  Shield,
   Clock,
   Users,
   ChevronRight,
@@ -25,24 +23,14 @@ const benefits = [
     description: 'Top-tier pay with weekly direct deposit, performance bonuses, and consistent miles.',
   },
   {
-    icon: Heart,
-    title: 'Full Benefits',
-    description: 'Medical, dental, and vision insurance plus 401(k) with company match.',
-  },
-  {
     icon: MapPin,
     title: 'Home Time',
     description: 'Predictable schedules with regular home time. We value your work-life balance.',
   },
   {
     icon: Truck,
-    title: 'Modern Equipment',
-    description: 'Late-model trucks with the latest safety technology and driver comfort features.',
-  },
-  {
-    icon: Shield,
-    title: 'Paid Training',
-    description: 'Comprehensive onboarding and ongoing training to keep you safe and sharp on the road.',
+    title: 'New Equipment',
+    description: 'New trucks and trailers with the latest safety technology and driver comfort features.',
   },
   {
     icon: Users,
@@ -53,11 +41,10 @@ const benefits = [
 
 const requirements = [
   'Valid Class A CDL',
-  'Minimum 1 year of verifiable OTR experience',
+  'Minimum 2 years of verifiable OTR experience',
   'Clean driving record',
   'Must pass DOT physical and drug screening',
   'No DUI/DWI in the last 5 years',
-  'Ability to lift up to 50 lbs',
 ]
 
 const steps = [

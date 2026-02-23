@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'LAVA Freight | Trusted Trucking & Logistics',
-  description: 'LAVA Freight delivers excellence in freight transportation across the nation. Reliable, safe, and efficient trucking services for your business.',
+  description: 'Trusted U.S. freight carrier specializing in high-value cargo, electronics, and time-sensitive shipments with reliable service.',
   keywords: 'trucking, freight, logistics, transportation, shipping, FTL, LTL, LAVA Freight',
 }
 

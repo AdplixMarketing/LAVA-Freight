@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Truck, Package, Clock, MapPin, Warehouse, Shield, ChevronRight, Check, ArrowRight } from 'lucide-react'
+import { Truck, Package, Clock, MapPin, Shield, ChevronRight, Check, ArrowRight } from 'lucide-react'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const services = [
@@ -56,16 +56,16 @@ const services = [
     image: '/trucks/services-dedicated.jpg',
   },
   {
-    icon: Warehouse,
-    title: 'Warehousing & Distribution',
-    description: 'Complement your transportation needs with our warehousing solutions for storage and distribution.',
+    icon: Shield,
+    title: 'High-Value & Time-Sensitive Freight',
+    description: 'Expert handling of high-value cargo and time-critical shipments with heightened care and security measures.',
     features: [
-      'Short and long-term storage',
-      'Cross-docking services',
-      'Inventory management',
-      'Order fulfillment',
+      'Enhanced cargo security protocols',
+      'Priority routing and handling',
+      'Chain-of-custody documentation',
+      'Real-time tracking and updates',
     ],
-    image: '/trucks/services-warehousing.jpg',
+    image: '/trucks/services-specialized.jpg',
   },
   {
     icon: Shield,
@@ -217,8 +217,8 @@ export default function ServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {['Manufacturing', 'Retail', 'Agriculture', 'Construction', 'Food & Beverage', 'Automotive', 'Healthcare', 'Technology', 'Energy', 'Consumer Goods', 'Industrial', 'E-Commerce'].map((industry, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {['Manufacturing', 'Retail', 'Food & Beverage', 'Automotive', 'Healthcare', 'Technology', 'E-Commerce'].map((industry, index) => (
               <ScrollReveal key={industry} delay={index * 0.05}>
                 <div className="card text-center py-6 hover:bg-gold-500/10">
                   <span className="text-white font-medium">{industry}</span>

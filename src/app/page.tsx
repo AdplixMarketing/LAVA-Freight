@@ -7,10 +7,10 @@ import { Truck, Shield, Clock, MapPin, ChevronRight, Star, Package, Users, Award
 import ScrollReveal from '@/components/ScrollReveal'
 
 const stats = [
-  { value: '15+', label: 'Years Experience', icon: Award },
-  { value: '500+', label: 'Happy Clients', icon: Users },
+  { value: '30+', label: 'Years Experience', icon: Award },
+  { value: '300+', label: 'Happy Clients', icon: Users },
   { value: '10K+', label: 'Deliveries', icon: Package },
-  { value: '98%', label: 'On-Time Rate', icon: Clock },
+  { value: '99%', label: 'On-Time Rate', icon: Clock },
 ]
 
 const services = [
@@ -30,9 +30,9 @@ const services = [
     description: 'Time-critical deliveries with guaranteed pickup and delivery windows.',
   },
   {
-    icon: MapPin,
-    title: 'Nationwide Coverage',
-    description: 'Comprehensive logistics network covering all 48 continental states.',
+    icon: Shield,
+    title: 'High-Value & Specialized Freight',
+    description: 'Expert handling of high-value cargo and time-sensitive shipments with the care and security they require.',
   },
 ]
 
@@ -265,8 +265,8 @@ export default function Home() {
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
-                  <div className="text-3xl sm:text-4xl font-bold">15+</div>
-                  <div className="font-semibold text-sm sm:text-base">Years of Excellence</div>
+                  <div className="text-3xl sm:text-4xl font-bold">30+</div>
+                  <div className="font-semibold text-sm sm:text-base">Years of Industry Experience</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -364,9 +364,9 @@ export default function Home() {
                 <div className="space-y-3 mb-10">
                   {[
                     'Competitive pay with weekly direct deposit',
-                    'Full medical, dental & vision benefits',
-                    'Late-model, well-maintained trucks',
-                    'Consistent miles and home time',
+                    'New equipment (trucks/trailers) with latest safety technology',
+                    'Predictable schedules with regular home time',
+                    'Supportive team culture',
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -396,8 +396,8 @@ export default function Home() {
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
                 <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-gold-500 text-navy-900 p-4 sm:p-6 rounded-xl shadow-xl">
-                  <div className="text-3xl sm:text-4xl font-bold">50+</div>
-                  <div className="font-semibold text-sm sm:text-base">Open Positions</div>
+                  <div className="text-3xl sm:text-4xl font-bold">Now</div>
+                  <div className="font-semibold text-sm sm:text-base">Hiring Drivers</div>
                 </div>
               </div>
             </ScrollReveal>

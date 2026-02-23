@@ -30,18 +30,14 @@ const values = [
 ]
 
 const timeline = [
-  { year: '2009', title: 'Company Founded', description: 'LAVA Freight was established with a single truck and a vision.' },
-  { year: '2012', title: 'Regional Expansion', description: 'Expanded operations to cover the entire Southwest region.' },
-  { year: '2016', title: 'Fleet Growth', description: 'Grew our fleet to over 50 trucks with dedicated drivers.' },
-  { year: '2019', title: 'Nationwide Service', description: 'Achieved full coverage across all 48 continental states.' },
-  { year: '2023', title: 'Industry Recognition', description: 'Named Top Regional Carrier by Logistics Today magazine.' },
+  { year: '2021', title: 'Where It All Begins', description: 'Humble beginnings, starting with 1 truck with a clear mission and dedication.' },
+  { year: '2026', title: 'Growing Strong and Steady', description: 'Reached the 10+ trucks milestone, continuing to expand while delivering the same high-quality service.' },
 ]
 
 const team = [
-  { name: 'Michael Rodriguez', role: 'CEO & Founder', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400' },
-  { name: 'Jennifer Walsh', role: 'Operations Director', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400' },
-  { name: 'David Kim', role: 'Fleet Manager', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400' },
-  { name: 'Amanda Foster', role: 'Customer Relations', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400' },
+  { name: 'Darko Stanic', role: 'Owner / CEO' },
+  { name: 'Alex Dekic', role: 'Operations Manager' },
+  { name: 'Gordon Djukic', role: 'Dispatch Manager' },
 ]
 
 export default function AboutPage() {
@@ -74,7 +70,7 @@ export default function AboutPage() {
               <span className="gradient-text">One Load at a Time</span>
             </h1>
             <p className="text-xl text-gray-300">
-              Since 2009, LAVA Freight has been a trusted partner for businesses seeking reliable
+              Since 2021, LAVA Freight has been a trusted partner for businesses seeking reliable
               freight transportation solutions across the United States.
             </p>
           </motion.div>
@@ -107,19 +103,18 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-gray-300 text-lg">
                   <p>
-                    LAVA Freight started with a simple belief: that every shipment deserves
-                    to be treated with care, delivered on time, and handled by professionals
-                    who take pride in their work.
+                    It all started with a single truck and one dedicated owner-operator, driven by a passion
+                    to provide freight solutions with unmatched reliability and transparency. Through hard work,
+                    long-standing industry experience, and a commitment to customer satisfaction, we steadily
+                    grew into a fleet of 10+ trucks.
                   </p>
                   <p>
-                    Founded by Michael Rodriguez in 2009 with just one truck, our company
-                    has grown into a respected nationwide carrier. But no matter how much
-                    we grow, we never forget our roots or the values that got us here.
+                    Over the years, we&apos;ve specialized in transporting high-value cargo and handling expedited,
+                    time-sensitive shipments, earning the trust of many businesses that rely on precision and care.
                   </p>
                   <p>
-                    Today, with a modern fleet and a team of dedicated professionals,
-                    we continue to build lasting relationships with our clients based on
-                    trust, reliability, and exceptional service.
+                    Even as we expanded, we&apos;ve never lost sight of what matters most: delivering the same
+                    high-quality service and dependable solutions that earned the confidence of our very first customers.
                   </p>
                 </div>
               </div>
@@ -137,12 +132,12 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gold-500/10 rounded-2xl flex items-center justify-center mb-6">
                   <Target className="w-8 h-8 text-gold-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Our Mission</h3>
+                <p className="text-gold-500 font-semibold italic mb-4">&ldquo;Efficient freight. Exceptional service.&rdquo;</p>
                 <p className="text-gray-300 text-lg">
-                  To provide reliable, efficient, and cost-effective freight transportation
-                  services that help our clients succeed. We are committed to exceeding
-                  expectations through innovation, safety, and unwavering dedication to
-                  customer satisfaction.
+                  Our mission is to deliver reliable, efficient, and flawless freight transportation solutions.
+                  We leverage our deep industry knowledge, advanced practices, and customer-first mindset to
+                  keep supply chains moving seamlessly and consistently.
                 </p>
               </div>
             </ScrollReveal>
@@ -152,12 +147,13 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-teal-500/10 rounded-2xl flex items-center justify-center mb-6">
                   <Eye className="w-8 h-8 text-teal-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Our Vision</h3>
+                <p className="text-teal-400 font-semibold italic mb-4">&ldquo;Growing stronger, serving smarter — without compromise.&rdquo;</p>
                 <p className="text-gray-300 text-lg">
-                  To be the most trusted name in freight transportation, recognized for
-                  our commitment to excellence, our investment in our people, and our
-                  role in driving America&apos;s economy forward. We envision a future where
-                  every business has access to world-class logistics.
+                  Our vision is to keep expanding our fleet while maintaining and growing our relationships
+                  in the industry, providing the same high level of service and reliability that has defined
+                  us since day one. As we grow, we remain committed to delivering consistent, high-quality
+                  freight solutions that customers can trust.
                 </p>
               </div>
             </ScrollReveal>
@@ -245,17 +241,14 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {team.map((member, index) => (
               <ScrollReveal key={member.name} delay={index * 0.1}>
-                <div className="card text-center group">
-                  <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                <div className="card text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gold-500/10 border-2 border-gold-500/30 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-gold-500">
+                      {member.name.split(' ').map((n: string) => n[0]).join('')}
+                    </span>
                   </div>
                   <h3 className="text-xl font-bold text-white">{member.name}</h3>
                   <p className="text-gold-500">{member.role}</p>

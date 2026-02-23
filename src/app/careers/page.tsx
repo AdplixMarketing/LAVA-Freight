@@ -238,6 +238,24 @@ export default function CareersPage() {
           <input type="text" name="zipCode" value={formState.zipCode} onChange={handleChange} required className={inputClasses} placeholder="77001" />
         </div>
       </div>
+
+      {/* SMS Consent — unchecked by default, not required */}
+      <div className="border border-navy-600 rounded-lg p-4 bg-navy-700/30">
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="smsConsent"
+            checked={formState.smsConsent}
+            onChange={handleChange}
+            className="w-4 h-4 mt-0.5 accent-gold-500 flex-shrink-0"
+          />
+          <span className="text-sm text-gray-400 leading-relaxed">
+            I consent to receive SMS text messages from LAVA Freight at the phone number provided. Messages may include recruiting updates, appointment reminders, and follow-up communications regarding my application. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out at any time. View our{' '}
+            <a href="/privacy" className="text-gold-500 hover:underline">Privacy Policy</a> and{' '}
+            <a href="/terms" className="text-gold-500 hover:underline">Terms &amp; Conditions</a>.
+          </span>
+        </label>
+      </div>
     </div>
   )
 
@@ -472,24 +490,6 @@ export default function CareersPage() {
         </h3>
         <label className={labelClasses}>Anything else you&apos;d like us to know?</label>
         <textarea name="additionalComments" value={formState.additionalComments} onChange={handleChange} rows={4} className={`${inputClasses} resize-none`} placeholder="Tell us about yourself, your goals, or any questions you have..." />
-      </div>
-
-      {/* SMS Consent — unchecked by default, not required */}
-      <div className="border border-navy-600 rounded-lg p-4 bg-navy-700/30">
-        <label className="flex items-start gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            name="smsConsent"
-            checked={formState.smsConsent}
-            onChange={handleChange}
-            className="w-4 h-4 mt-0.5 accent-gold-500 flex-shrink-0"
-          />
-          <span className="text-sm text-gray-400 leading-relaxed">
-            I consent to receive SMS text messages from LAVA Freight at the phone number provided. Messages may include recruiting updates, appointment reminders, and follow-up communications regarding my application. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out at any time. View our{' '}
-            <a href="/privacy" className="text-gold-500 hover:underline">Privacy Policy</a> and{' '}
-            <a href="/terms" className="text-gold-500 hover:underline">Terms &amp; Conditions</a>.
-          </span>
-        </label>
       </div>
 
       <div className="border-t border-navy-600 pt-8">

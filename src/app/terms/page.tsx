@@ -41,7 +41,7 @@ export default function TermsPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">2. Services</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    LAVA Freight provides freight transportation and logistics services, including but not limited to full truckload (FTL), less than truckload (LTL), expedited shipping, dedicated routes, warehousing, and specialized freight services. All services are subject to availability and applicable regulations.
+                    LAVA Freight provides freight transportation and logistics services, including but not limited to full truckload (FTL), less than truckload (LTL), expedited shipping, dedicated routes, specialized freight, and high-value and time-sensitive cargo handling. All services are subject to availability and applicable regulations.
                   </p>
                 </div>
 
@@ -151,13 +151,123 @@ export default function TermsPage() {
                   </p>
                 </div>
 
+                {/* SMS Disclosure */}
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">14. Contact Us</h2>
+                  <h2 className="text-2xl font-bold text-white mb-2">14. SMS Disclosure &amp; Messaging</h2>
+                  <p className="text-gray-400 text-sm mb-6">
+                    This section governs all SMS (text message) communications between LAVA Freight and users who have opted in via our website forms.
+                  </p>
+
+                  <div className="space-y-6">
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.1 — SMS Consent Communication</h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        The information (including phone numbers) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.2 — Types of SMS Communications</h3>
+                      <p className="text-gray-300 leading-relaxed mb-3">
+                        If you have consented to receive text messages from LAVA Freight, you may receive messages related to the following:
+                      </p>
+                      <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4 mb-4">
+                        <li>Quote confirmations and freight updates</li>
+                        <li>Appointment and pickup reminders</li>
+                        <li>Follow-up messages related to your inquiry or shipment</li>
+                        <li>Billing and account inquiries</li>
+                        <li>Driver recruiting communications (careers applicants)</li>
+                      </ul>
+                      <div className="bg-navy-700/50 border border-navy-600 rounded-lg p-4">
+                        <p className="text-gray-400 text-sm italic">
+                          Example: &quot;Hello, this is LAVA Freight. Your shipment from Chicago, IL to Dallas, TX has been confirmed for pickup on [Date]. Our driver will contact you 30 minutes before arrival. Reply STOP to opt out of SMS messaging at any time.&quot;
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.3 — Message Frequency</h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Message frequency may vary depending on the type of communication and your level of engagement with our services. You may receive up to 4 SMS messages per week related to your shipments, quotes, or account status.
+                      </p>
+                      <div className="bg-navy-700/50 border border-navy-600 rounded-lg p-4 mt-3">
+                        <p className="text-gray-400 text-sm italic">
+                          Example: &quot;Message frequency may vary. You may receive up to 4 SMS messages per week regarding your shipments or account status.&quot;
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.4 — Potential Fees for SMS Messaging</h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Please note that standard message and data rates may apply, depending on your mobile carrier&apos;s pricing plan. These fees may vary if the message is sent domestically or internationally. LAVA Freight is not responsible for any messaging charges incurred by your carrier.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.5 — Opt-In Method</h3>
+                      <p className="text-gray-300 leading-relaxed mb-3">
+                        You may opt in to receive SMS messages from LAVA Freight in the following ways:
+                      </p>
+                      <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                        <li>By checking the SMS consent checkbox on our online contact or driver application form</li>
+                        <li>Verbally, during a conversation with our team</li>
+                        <li>By filling out a paper form with SMS consent indicated</li>
+                      </ul>
+                      <p className="text-gray-400 text-sm mt-3">
+                        The SMS consent checkbox on our website forms is unchecked by default and is never required to submit a form or receive our services.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.6 — Opt-Out Method</h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        You can opt out of receiving SMS messages at any time. To do so, simply reply <strong className="text-white">STOP</strong> to any SMS message you receive from LAVA Freight. Alternatively, you can contact us directly at{' '}
+                        <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a> or{' '}
+                        <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a> to request removal from our messaging list. After opting out, you will receive a one-time confirmation message and no further SMS communications.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-2">14.7 — Help</h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        If you are experiencing any issues with our SMS communications, you can reply with the keyword <strong className="text-white">HELP</strong> to any message you receive. You can also get help directly from us:
+                      </p>
+                      <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4 mt-3">
+                        <li>Phone: <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a></li>
+                        <li>Email: <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a></li>
+                        <li>Privacy Policy: <Link href="/privacy" className="text-gold-500 hover:underline">lavafreight.net/privacy</Link></li>
+                      </ul>
+                      <p className="text-gray-400 text-sm mt-3">
+                        If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gold-500 mb-3">14.8 — Standard Messaging Disclosures</h3>
+                      <div className="bg-navy-700/50 border border-gold-500/20 rounded-xl p-5 space-y-2">
+                        <p className="text-gray-300">• Message and data rates may apply.</p>
+                        <p className="text-gray-300">• You can opt out at any time by texting <strong className="text-white">STOP</strong>.</p>
+                        <p className="text-gray-300">• For assistance, text <strong className="text-white">HELP</strong> or visit our{' '}
+                          <Link href="/privacy" className="text-gold-500 hover:underline">Privacy Policy</Link> and{' '}
+                          <Link href="/terms" className="text-gold-500 hover:underline">Terms &amp; Conditions</Link> pages.
+                        </p>
+                        <p className="text-gray-300">• Message frequency may vary.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-4">15. Contact Us</h2>
                   <p className="text-gray-300 leading-relaxed">
                     If you have any questions about these Terms and Conditions, please contact us:
                   </p>
                   <div className="mt-4 space-y-2 text-gray-300">
                     <p><strong className="text-white">LAVA Freight</strong></p>
+                    <p>55W 22nd Street, Suite #130, Lombard, IL 60148</p>
                     <p>Email: <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a></p>
                     <p>Phone: <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a></p>
                   </div>

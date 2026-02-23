@@ -50,6 +50,7 @@ export default function ContactPage() {
     origin: '',
     destination: '',
     message: '',
+    smsConsent: false,
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -60,7 +61,12 @@ export default function ContactPage() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value })
+    const { name, value, type } = e.target
+    if (type === 'checkbox') {
+      setFormState({ ...formState, [name]: (e.target as HTMLInputElement).checked })
+    } else {
+      setFormState({ ...formState, [name]: value })
+    }
   }
 
   return (
@@ -250,6 +256,24 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-lg text-white placeholder-gray-500 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors resize-none"
                         placeholder="Tell us about your shipment..."
                       />
+                    </div>
+
+                    {/* SMS Consent — unchecked by default, not required */}
+                    <div className="border border-navy-600 rounded-lg p-4 bg-navy-700/30">
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="smsConsent"
+                          checked={formState.smsConsent}
+                          onChange={handleChange}
+                          className="w-4 h-4 mt-0.5 accent-gold-500 flex-shrink-0"
+                        />
+                        <span className="text-sm text-gray-400 leading-relaxed">
+                          I consent to receive SMS text messages from LAVA Freight at the phone number provided. Messages may include quote updates, shipment information, and follow-up communications. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out at any time. View our{' '}
+                          <a href="/privacy" className="text-gold-500 hover:underline">Privacy Policy</a> and{' '}
+                          <a href="/terms" className="text-gold-500 hover:underline">Terms &amp; Conditions</a>.
+                        </span>
+                      </label>
                     </div>
 
                     <button type="submit" className="btn-primary w-full">

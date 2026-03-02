@@ -107,11 +107,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:dan@lavafreight.net"
+                  href="mailto:info@lavafreight.net"
                   className="flex items-start gap-3 text-gray-400 hover:text-gold-500 transition-colors group"
                 >
                   <Mail size={20} className="text-gold-500 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span>dan@lavafreight.net</span>
+                  <span>info@lavafreight.net</span>
                 </a>
               </li>
               <li>

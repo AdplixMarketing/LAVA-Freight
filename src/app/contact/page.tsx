@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    details: ['dan@lavafreight.net'],
-    action: 'mailto:dan@lavafreight.net',
+    details: ['info@lavafreight.net'],
+    action: 'mailto:info@lavafreight.net',
   },
   {
     icon: MapPin,

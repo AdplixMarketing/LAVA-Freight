@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                   <h3 className="text-lg font-semibold text-gold-500 mb-2">Opt-Out</h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
                     You may opt out of receiving SMS messages at any time by replying <strong className="text-white">STOP</strong> to any SMS message you receive from us. You may also contact us directly at{' '}
-                    <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a> or{' '}
+                    <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a> or{' '}
                     <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a> to be removed from our messaging list. After opting out, you will no longer receive SMS messages from LAVA Freight unless you opt back in.
                   </p>
 
@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-gray-300 leading-relaxed">
                     If you experience any issues with our SMS communications, reply <strong className="text-white">HELP</strong> to any message or contact us directly at{' '}
                     <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a> or{' '}
-                    <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a>.
+                    <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a>.
                   </p>
                 </div>
 
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
                   </ul>
                   <p className="text-gray-300 leading-relaxed mt-4">
                     To exercise any of these rights, please contact us at{' '}
-                    <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a>. We will respond to your request within a reasonable timeframe and in accordance with applicable law.
+                    <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a>. We will respond to your request within a reasonable timeframe and in accordance with applicable law.
                   </p>
                 </div>
 
@@ -211,7 +211,7 @@ export default function PrivacyPolicyPage() {
                   <div className="mt-4 space-y-2 text-gray-300">
                     <p><strong className="text-white">LAVA Freight</strong></p>
                     <p>55W 22nd Street, Suite #130, Lombard, IL 60148</p>
-                    <p>Email: <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a></p>
+                    <p>Email: <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a></p>
                     <p>Phone: <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a></p>
                   </div>
                 </div>

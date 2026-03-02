@@ -224,7 +224,7 @@ export default function TermsPage() {
                       <h3 className="text-lg font-semibold text-gold-500 mb-2">14.6 — Opt-Out Method</h3>
                       <p className="text-gray-300 leading-relaxed">
                         You can opt out of receiving SMS messages at any time. To do so, simply reply <strong className="text-white">STOP</strong> to any SMS message you receive from LAVA Freight. Alternatively, you can contact us directly at{' '}
-                        <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a> or{' '}
+                        <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a> or{' '}
                         <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a> to request removal from our messaging list. After opting out, you will receive a one-time confirmation message and no further SMS communications.
                       </p>
                     </div>
@@ -236,7 +236,7 @@ export default function TermsPage() {
                       </p>
                       <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4 mt-3">
                         <li>Phone: <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a></li>
-                        <li>Email: <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a></li>
+                        <li>Email: <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a></li>
                         <li>Privacy Policy: <Link href="/privacy" className="text-gold-500 hover:underline">lavafreight.net/privacy</Link></li>
                       </ul>
                       <p className="text-gray-400 text-sm mt-3">
@@ -268,7 +268,7 @@ export default function TermsPage() {
                   <div className="mt-4 space-y-2 text-gray-300">
                     <p><strong className="text-white">LAVA Freight</strong></p>
                     <p>55W 22nd Street, Suite #130, Lombard, IL 60148</p>
-                    <p>Email: <a href="mailto:dan@lavafreight.net" className="text-gold-500 hover:underline">dan@lavafreight.net</a></p>
+                    <p>Email: <a href="mailto:info@lavafreight.net" className="text-gold-500 hover:underline">info@lavafreight.net</a></p>
                     <p>Phone: <a href="tel:+13129098180" className="text-gold-500 hover:underline">(312) 909-8180</a></p>
                   </div>
                 </div>

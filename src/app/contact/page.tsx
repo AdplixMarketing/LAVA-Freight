@@ -288,20 +288,25 @@ export default function ContactPage() {
             {/* Map & Additional Info */}
             <ScrollReveal direction="right">
               <div className="space-y-8">
-                {/* Map placeholder */}
+                {/* Map - USA with pin at Lombard, IL */}
                 <div className="card overflow-hidden p-0">
                   <div className="relative h-80 bg-navy-700">
-                    <Image
-                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074"
-                      alt="Map location"
-                      fill
-                      className="object-cover opacity-50"
+                    <iframe
+                      src="https://www.openstreetmap.org/export/embed.html?bbox=-125.0,24.0,-66.5,49.5&layer=mapnik&marker=41.8827,-88.0121"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      title="LAVA Freight Location - Lombard, IL"
+                      className="absolute inset-0 w-full h-full"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <MapPin className="w-12 h-12 text-gold-500 mx-auto mb-2" />
-                        <p className="text-white font-semibold">55W 22nd Street, Suite #130</p>
-                        <p className="text-gray-400">Lombard, IL 60148</p>
+                  </div>
+                  <div className="p-4 bg-navy-800 text-center border-t border-navy-600">
+                    <div className="flex items-center justify-center gap-2">
+                      <MapPin className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                      <div>
+                        <p className="text-white font-semibold text-sm">55W 22nd Street, Suite #130</p>
+                        <p className="text-gray-400 text-sm">Lombard, IL 60148</p>
                       </div>
                     </div>
                   </div>

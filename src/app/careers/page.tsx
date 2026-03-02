@@ -132,6 +132,7 @@ export default function CareersPage() {
   const [formState, setFormState] = useState(initialFormState)
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [direction, setDirection] = useState(1) // 1 = forward, -1 = back
   const formRef = useRef<HTMLDivElement>(null)
 
@@ -160,10 +161,76 @@ export default function CareersPage() {
     scrollToForm()
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsLoading(true)
+    try {
+      const f = formState
+      const endorsements = [
+        f.endorsementHazmat && 'HazMat',
+        f.endorsementTanker && 'Tanker',
+        f.endorsementDoubles && 'Doubles/Triples',
+        f.endorsementTWIC && 'TWIC',
+      ].filter(Boolean).join(', ') || 'None'
+      const equipment = [
+        f.equipDryVan && 'Dry Van',
+        f.equipFlatbed && 'Flatbed',
+        f.equipReefer && 'Reefer',
+        f.equipTanker && 'Tanker',
+        f.equipIntermodal && 'Intermodal',
+      ].filter(Boolean).join(', ') || 'None'
+
+      const res = await fetch('https://formsubmit.co/ajax/info@lavafreight.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Driver Application — ${f.firstName} ${f.lastName}`,
+          // Personal
+          'First Name': f.firstName,
+          'Last Name': f.lastName,
+          Email: f.email,
+          Phone: f.phone,
+          'Date of Birth': f.dateOfBirth,
+          City: f.city,
+          State: f.state,
+          'Zip Code': f.zipCode,
+          'SMS Consent': f.smsConsent ? 'Yes' : 'No',
+          // CDL
+          'CDL Class': f.cdlClass,
+          'CDL Number': f.cdlNumber,
+          'CDL State': f.cdlState,
+          'CDL Expiration': f.cdlExpiration,
+          'Years Experience': f.yearsExperience,
+          'Experience Type': f.experienceType,
+          Endorsements: endorsements,
+          // Equipment & Record
+          'Equipment Experience': equipment,
+          'Accidents (last 3 yrs)': f.accidentsLast3Years,
+          'Violations (last 3 yrs)': f.violationsLast3Years,
+          'CDL Suspended': f.cdlSuspended,
+          'DUI History': f.duiHistory,
+          // Employment
+          'Current Employer': f.currentEmployer,
+          'Years at Employer': f.yearsAtEmployer,
+          'Reason for Leaving': f.reasonForLeaving,
+          // Availability
+          'Available Start Date': f.availableStartDate,
+          'Preferred Route Type': f.preferredRouteType,
+          'Willing to Team Drive': f.willingToTeamDrive,
+          'Referral Source': f.referralSource,
+          'Additional Comments': f.additionalComments,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setIsSubmitted(true)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    } catch {
+      // silently fail — user can try again
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (
@@ -769,12 +836,12 @@ export default function CareersPage() {
                         ) : (
                           <button
                             type="submit"
-                            disabled={!canAdvance()}
+                            disabled={!canAdvance() || isLoading}
                             className={`btn-primary px-8 py-3 ${
-                              !canAdvance() ? 'opacity-50 cursor-not-allowed hover:scale-100 hover:shadow-none' : ''
+                              !canAdvance() || isLoading ? 'opacity-50 cursor-not-allowed hover:scale-100 hover:shadow-none' : ''
                             }`}
                           >
-                            Submit Application
+                            {isLoading ? 'Submitting...' : 'Submit Application'}
                             <Send className="ml-2" size={20} />
                           </button>
                         )}

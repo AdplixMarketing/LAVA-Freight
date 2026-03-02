@@ -53,11 +53,35 @@ export default function ContactPage() {
     smsConsent: false,
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
-    setIsSubmitted(true)
+    setIsLoading(true)
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@lavafreight.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Quote Request — LAVA Freight',
+          Name: formState.name,
+          Company: formState.company,
+          Email: formState.email,
+          Phone: formState.phone,
+          'Service Type': formState.serviceType,
+          Origin: formState.origin,
+          Destination: formState.destination,
+          Message: formState.message,
+          'SMS Consent': formState.smsConsent ? 'Yes' : 'No',
+        }),
+      })
+      const data = await res.json()
+      if (data.success) setIsSubmitted(true)
+    } catch {
+      // silently fail — user can try again
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -276,8 +300,12 @@ export default function ContactPage() {
                       </label>
                     </div>
 
-                    <button type="submit" className="btn-primary w-full">
-                      Submit Request
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isLoading ? 'Sending...' : 'Submit Request'}
                       <Send className="ml-2" size={20} />
                     </button>
                   </form>

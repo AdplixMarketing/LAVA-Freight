@@ -102,9 +102,8 @@ const initialFormState = {
   duiHistory: '',
 
   // Employment
-  currentEmployer: '',
-  yearsAtEmployer: '',
-  reasonForLeaving: '',
+  employerCount: '',
+  employers: [] as { name: string; duration: string; reasonForLeaving: string }[],
 
   // Availability
   availableStartDate: '',
@@ -124,7 +123,7 @@ const requiredByStep: Record<number, (keyof typeof initialFormState)[]> = {
   1: ['firstName', 'lastName', 'email', 'phone', 'dateOfBirth', 'city', 'state', 'zipCode'],
   2: ['cdlClass', 'cdlNumber', 'cdlState', 'cdlExpiration', 'yearsExperience', 'experienceType'],
   3: ['accidentsLast3Years', 'violationsLast3Years', 'cdlSuspended', 'duiHistory'],
-  4: ['currentEmployer'],
+  4: [],
   5: ['availableStartDate', 'preferredRouteType'],
 }
 
@@ -141,6 +140,10 @@ export default function CareersPage() {
   }
 
   const canAdvance = () => {
+    if (currentStep === 4) {
+      if (!formState.employerCount) return false
+      return formState.employers.every((emp) => emp.name.trim() !== '')
+    }
     const fields = requiredByStep[currentStep] || []
     return fields.every((field) => {
       const value = formState[field]
@@ -210,9 +213,13 @@ export default function CareersPage() {
           'CDL Suspended': f.cdlSuspended,
           'DUI History': f.duiHistory,
           // Employment
-          'Current Employer': f.currentEmployer,
-          'Years at Employer': f.yearsAtEmployer,
-          'Reason for Leaving': f.reasonForLeaving,
+          'Companies (last 2 yrs)': f.employerCount,
+          ...f.employers.reduce((acc, emp, i) => ({
+            ...acc,
+            [`Employer ${i + 1} - Company`]: emp.name,
+            [`Employer ${i + 1} - Duration`]: emp.duration || 'Not specified',
+            [`Employer ${i + 1} - Reason for Leaving`]: emp.reasonForLeaving || 'Not specified',
+          }), {}),
           // Availability
           'Available Start Date': f.availableStartDate,
           'Preferred Route Type': f.preferredRouteType,
@@ -237,11 +244,24 @@ export default function CareersPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target
-    if (type === 'checkbox') {
+    if (name === 'employerCount') {
+      const count = parseInt(value) || 0
+      const updated = Array.from({ length: count }, (_, i) =>
+        formState.employers[i] || { name: '', duration: '', reasonForLeaving: '' }
+      )
+      setFormState({ ...formState, employerCount: value, employers: updated })
+    } else if (type === 'checkbox') {
       setFormState({ ...formState, [name]: (e.target as HTMLInputElement).checked })
     } else {
       setFormState({ ...formState, [name]: value })
     }
+  }
+
+  const handleEmployerChange = (index: number, field: string, value: string) => {
+    const updated = formState.employers.map((emp, i) =>
+      i === index ? { ...emp, [field]: value } : emp
+    )
+    setFormState({ ...formState, employers: updated })
   }
 
   const inputClasses =
@@ -477,28 +497,78 @@ export default function CareersPage() {
   const renderStep4 = () => (
     <div className="space-y-6">
       <h3 className="text-xl font-bold text-gold-500 mb-6 pb-3 border-b border-navy-600">
-        Most Recent Employment
+        Employment History
       </h3>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <label className={labelClasses}>Current / Most Recent Employer *</label>
-          <input type="text" name="currentEmployer" value={formState.currentEmployer} onChange={handleChange} required className={inputClasses} placeholder="Company name" />
-        </div>
-        <div>
-          <label className={labelClasses}>Years at This Employer</label>
-          <select name="yearsAtEmployer" value={formState.yearsAtEmployer} onChange={handleChange} className={inputClasses}>
-            <option value="">Select...</option>
-            <option value="less-than-1">Less than 1 year</option>
-            <option value="1-2">1-2 years</option>
-            <option value="3-5">3-5 years</option>
-            <option value="5+">5+ years</option>
-          </select>
-        </div>
-      </div>
+
       <div>
-        <label className={labelClasses}>Reason for Leaving</label>
-        <input type="text" name="reasonForLeaving" value={formState.reasonForLeaving} onChange={handleChange} className={inputClasses} placeholder="e.g., Seeking better pay, home time, etc." />
+        <label className={labelClasses}>
+          How many trucking companies have you worked for in the past 2 years? *
+        </label>
+        <select name="employerCount" value={formState.employerCount} onChange={handleChange} required className={inputClasses}>
+          <option value="">Select...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 or more</option>
+        </select>
       </div>
+
+      {formState.employers.map((employer, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, delay: index * 0.06 }}
+          className="border border-navy-600 rounded-xl p-5 bg-navy-700/30 space-y-4"
+        >
+          <h4 className="text-sm font-bold text-white flex items-center gap-2">
+            <span className="w-6 h-6 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center text-xs font-bold shrink-0">
+              {index + 1}
+            </span>
+            Company #{index + 1}
+          </h4>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className={labelClasses}>Company Name *</label>
+              <input
+                type="text"
+                value={employer.name}
+                onChange={(e) => handleEmployerChange(index, 'name', e.target.value)}
+                className={inputClasses}
+                placeholder="e.g. ABC Trucking"
+              />
+            </div>
+            <div>
+              <label className={labelClasses}>How long were you there?</label>
+              <select
+                value={employer.duration}
+                onChange={(e) => handleEmployerChange(index, 'duration', e.target.value)}
+                className={inputClasses}
+              >
+                <option value="">Select...</option>
+                <option value="Less than 3 months">Less than 3 months</option>
+                <option value="3–6 months">3–6 months</option>
+                <option value="6–12 months">6–12 months</option>
+                <option value="1–2 years">1–2 years</option>
+                <option value="2+ years">2+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className={labelClasses}>Why did you leave?</label>
+            <input
+              type="text"
+              value={employer.reasonForLeaving}
+              onChange={(e) => handleEmployerChange(index, 'reasonForLeaving', e.target.value)}
+              className={inputClasses}
+              placeholder="e.g. Better pay, home time, company closed, laid off…"
+            />
+          </div>
+        </motion.div>
+      ))}
     </div>
   )
 

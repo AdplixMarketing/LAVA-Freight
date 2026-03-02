@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Truck, Package, Calendar, ExternalLink } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Truck, Package, Calendar } from 'lucide-react'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const contactInfo = [
@@ -318,7 +318,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {/* Map - USA with pin at Lombard, IL */}
                 <div className="card overflow-hidden p-0">
-                  <div className="relative h-80 bg-navy-700 group">
+                  <div className="relative h-80 bg-navy-700">
                     <iframe
                       src="https://www.openstreetmap.org/export/embed.html?bbox=-125.0,24.0,-66.5,49.5&layer=mapnik&marker=41.8827,-88.0121"
                       width="100%"
@@ -328,19 +328,6 @@ export default function ContactPage() {
                       title="LAVA Freight Location - Lombard, IL"
                       className="absolute inset-0 w-full h-full"
                     />
-                    {/* Clickable overlay → Google Maps */}
-                    <a
-                      href="https://www.google.com/maps/search/?api=1&query=55W+22nd+Street+Suite+130+Lombard+IL+60148"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Open location in Google Maps"
-                      className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer"
-                    >
-                      <span className="flex items-center gap-2 bg-navy-900/80 backdrop-blur-sm text-gold-500 text-sm font-semibold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
-                        <ExternalLink size={14} />
-                        Open in Google Maps
-                      </span>
-                    </a>
                   </div>
                   <div className="p-4 bg-navy-800 text-center border-t border-navy-600">
                     <div className="flex items-center justify-center gap-2">

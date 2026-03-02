@@ -318,15 +318,20 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {/* Map - USA with pin at Lombard, IL */}
                 <div className="card overflow-hidden p-0">
-                  <div className="relative h-80 bg-navy-700">
+                  <div className="relative h-80 bg-navy-700 overflow-hidden">
                     <iframe
                       src="https://www.openstreetmap.org/export/embed.html?bbox=-125.0,24.0,-66.5,49.5&layer=mapnik&marker=41.8827,-88.0121"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0, pointerEvents: 'none' }}
                       loading="lazy"
                       title="LAVA Freight Location - Lombard, IL"
-                      className="absolute inset-0 w-full h-full"
+                      style={{
+                        border: 0,
+                        pointerEvents: 'none',
+                        position: 'absolute',
+                        top: 0,
+                        left: '-50px',
+                        width: 'calc(100% + 50px)',
+                        height: '100%',
+                      }}
                     />
                   </div>
                   <div className="p-4 bg-navy-800 text-center border-t border-navy-600">

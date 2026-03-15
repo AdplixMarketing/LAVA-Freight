@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'LAVA Freight | Trusted Trucking & Logistics',
   description: 'Trusted U.S. freight carrier specializing in high-value cargo, electronics, and time-sensitive shipments with reliable service.',
   keywords: 'trucking, freight, logistics, transportation, shipping, FTL, LTL, LAVA Freight',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
